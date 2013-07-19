@@ -3,6 +3,7 @@ var express = require('express'), fs = require('fs');
 
 var app = express.createServer(express.logger());
 
+app.use('/css/',express.static(__dirname + '/css/'));
 
 app.get('/', function (request, response) {
     fs.readFile('index.html', function (err, data) {
